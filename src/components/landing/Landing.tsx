@@ -608,6 +608,12 @@ export default function Landing() {
               <div className="foot-col"><h5>Producto</h5><a href="#producto">Pesos digitales</a><a href="#bonos">Bonos</a><a href="#producto">Bóvedas</a><a href="#tarjeta">Tarjeta</a></div>
               <div className="foot-col"><h5>Compañía</h5><a href="#">Sobre nosotros</a><a href="#seguridad">Seguridad</a><a href="#">Carreras</a><a href="#">Prensa</a></div>
               <div className="foot-col"><h5>Legal</h5><a href="#">Términos</a><a href="#">Privacidad</a><a href="#">Comisiones</a><a href="#">Soporte</a></div>
+              <div className="foot-col">
+                <h5>Inversionistas</h5>
+                <a className="foot-pitch" href="/reyf-pitch.html" target="_blank" rel="noopener noreferrer">📊 Pitch · Lean Canvas</a>
+                <p className="foot-pitch-note">Conoce el modelo de negocio, la tecnología y la tracción de Reyf.</p>
+                <a href="mailto:inversionistas@reyf.app">Contacto inversión</a>
+              </div>
             </div>
             <div className="foot-bottom">
               <span>© 2026 Reyf. Todos los derechos reservados.</span>
