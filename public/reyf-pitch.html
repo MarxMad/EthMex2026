@@ -138,17 +138,28 @@
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
   .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:34px}
   .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
-  .card{padding:24px 22px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line);
+  .card{padding:30px 24px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line);
     transition:transform .25s,border-color .25s,background .25s}
-  .card:hover{transform:translateY(-6px);border-color:var(--line-2);background:var(--surface-2)}
-  .card .ic{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:22px;
-    background:var(--accent-soft);border:1px solid var(--line);margin-bottom:14px}
-  .card.v .ic{background:var(--accent-2-soft)}
-  .card h3{font-size:17px;font-weight:800;margin-bottom:7px}
-  .card p{font-size:14px;color:var(--muted)}
-  .card .step-n{font-family:var(--display);font-size:40px;font-weight:700;color:var(--accent);line-height:1;margin-bottom:12px}
-  .card.v .step-n{color:var(--accent-2)}
+  .card:hover{transform:translateY(-7px);border-color:var(--line-2);background:var(--surface-2)}
+  .card .ic{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;color:var(--accent);
+    background:linear-gradient(155deg,var(--accent-soft),transparent);border:1px solid var(--line-2);margin-bottom:20px}
+  .card.v .ic{color:var(--accent-2);background:linear-gradient(155deg,var(--accent-2-soft),transparent)}
+  .card .ic svg{width:30px;height:30px}
+  /* shared icon stroke styling */
+  .ic svg,.chip-x svg,.badge-lc svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .chip-x svg{width:18px;height:18px;flex:none;color:var(--accent)}
+  .badge-lc svg{width:17px;height:17px;color:var(--accent)}
+  .card h3{font-size:19px;font-weight:800;margin-bottom:6px}
+  .card p{font-size:14.5px;color:var(--muted)}
+  .card .step-n{font-family:var(--display);font-size:54px;font-weight:700;color:var(--accent);line-height:1;margin-bottom:14px;
+    -webkit-text-stroke:0;text-shadow:0 0 30px var(--accent-soft)}
+  .card.v .step-n{color:var(--accent-2);text-shadow:0 0 30px var(--accent-2-soft)}
   .card .tagline{font-size:12px;color:var(--dim);margin-top:10px}
+  /* inline chip row */
+  .chips-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+  .chip-x{display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;
+    background:var(--surface-2);border:1px solid var(--line);font-size:15px;font-weight:600;color:var(--muted)}
+  .chip-x b{color:var(--txt);font-weight:800}
 
   /* stat cards */
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
@@ -243,7 +254,7 @@
         </div>
         <h1 class="display rv"><span class="l1">Cripto invisible.</span><br /><span class="l2">Banco de verdad.</span></h1>
         <p class="sub rv">Ahorro en pesos digitales que rinde — con la cara de tu app de banco.</p>
-        <span class="badge-lc rv">📋 Modelo de negocio · <b>Lean Canvas</b></span>
+        <span class="badge-lc rv"><svg viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg> Modelo de negocio · <b>Lean Canvas</b></span>
       </div>
     </section>
 
@@ -258,7 +269,11 @@
           <div class="stat rv d2"><div class="big num" data-count="0.54" data-dec="2" data-suf="%">0%</div><div class="lbl">comisión anual sobre tu saldo</div></div>
           <div class="stat rv d3"><div class="big num">16–40<span style="font-size:.6em">%</span></div><div class="lbl">en préstamos de pensión</div></div>
         </div>
-        <p class="lede rv d4"><b style="color:var(--txt)">Alternativas actuales:</b> Afore (opaca, baja), banco tradicional (no rinde) o apps cripto (seed phrase, gas, complejas).</p>
+        <div class="chips-row rv d4">
+          <span class="chip-x"><svg viewBox="0 0 24 24"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg> Afore · <b>opaca</b></span>
+          <span class="chip-x"><svg viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg> Banco · <b>no rinde</b></span>
+          <span class="chip-x"><svg viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Cripto · <b>compleja</b></span>
+        </div>
       </div>
     </section>
 
@@ -269,9 +284,9 @@
         <span class="kicker rv"><span class="n">2</span>Segmentos de cliente</span>
         <h2 class="title display rv">Para quién es <span class="em">Reyf</span></h2>
         <div class="grid3">
-          <div class="card rv d1"><div class="ic">📱</div><h3>Mercado</h3><p>Mexicanos bancarizados digitalmente, 25–45 años, que quieren ahorrar mejor sin volverse expertos.</p></div>
-          <div class="card v rv d2"><div class="ic">🚀</div><h3>Early adopters</h3><p>Profesionistas cripto-curiosos que buscan rendimiento real sin la fricción de DeFi.</p></div>
-          <div class="card rv d3"><div class="ic">💸</div><h3>Caso de liquidez</h3><p>Freelancers e independientes que necesitan adelanto sin vender su ahorro.</p></div>
+          <div class="card rv d1"><div class="ic"><svg viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg></div><h3>Mercado</h3><p>Mexicanos digitales, 25–45.</p></div>
+          <div class="card v rv d2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><h3>Early adopters</h3><p>Cripto-curiosos sin fricción.</p></div>
+          <div class="card rv d3"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg></div><h3>Liquidez</h3><p>Freelancers que necesitan adelanto.</p></div>
         </div>
       </div>
     </section>
@@ -282,11 +297,11 @@
       <div class="slide-inner" style="text-align:center">
         <span class="kicker rv" style="margin-inline:auto"><span class="n">3</span>Propuesta única de valor</span>
         <h2 class="title display rv" style="margin-inline:auto;max-width:22ch">Un banco que rinde, <span class="em">sin que sepas que es cripto</span></h2>
-        <p class="lede rv d1" style="margin-inline:auto">Concepto de alto nivel: <b style="color:var(--txt)">"DeFi con la cara de tu app de banco"</b>. Lo mejor de las finanzas on-chain, sin seed phrase, sin gas y sin jerga.</p>
+        <p class="lede rv d1" style="margin-inline:auto;max-width:none"><b style="color:var(--txt)">DeFi con la cara de tu app de banco.</b></p>
         <div class="grid3" style="margin-top:34px">
-          <div class="card rv d2"><div class="ic">🫥</div><h3>Invisible</h3><p>Es cripto, pero se siente como tu banco de siempre.</p></div>
-          <div class="card v rv d3"><div class="ic">📈</div><h3>Rinde</h3><p>0% de comisión sobre tu saldo. Tu dinero trabaja.</p></div>
-          <div class="card rv d4"><div class="ic">🔓</div><h3>Líquido</h3><p>Adelanto a 0% sin vender tu principal.</p></div>
+          <div class="card rv d2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg></div><h3>Invisible</h3><p>Se siente como tu banco.</p></div>
+          <div class="card v rv d3"><div class="ic"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><h3>Rinde</h3><p>0% sobre tu saldo.</p></div>
+          <div class="card rv d4"><div class="ic"><svg viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg></div><h3>Líquido</h3><p>Adelanto sin vender.</p></div>
         </div>
       </div>
     </section>
@@ -298,10 +313,10 @@
         <span class="kicker rv"><span class="n">4</span>Solución</span>
         <h2 class="title display rv">Cuatro pasos. <span class="em">Cero complejidad.</span></h2>
         <div class="grid4">
-          <div class="card rv d1"><div class="step-n">1</div><h3>Entra con tu correo</h3><p>Wallet lista, sin seed phrase.</p></div>
-          <div class="card v rv d2"><div class="step-n">2</div><h3>Deposita por SPEI</h3><p>Se convierte en MXNB solo.</p></div>
-          <div class="card rv d3"><div class="step-n">3</div><h3>Tu saldo rinde</h3><p>On-chain y sin pagar gas.</p></div>
-          <div class="card v rv d4"><div class="step-n">4</div><h3>Retira cuando quieras</h3><p>A tu banco por SPEI.</p></div>
+          <div class="card rv d1"><div class="step-n">1</div><h3>Entra</h3><p>Con tu correo.</p></div>
+          <div class="card v rv d2"><div class="step-n">2</div><h3>Deposita</h3><p>Por SPEI → MXNB.</p></div>
+          <div class="card rv d3"><div class="step-n">3</div><h3>Rinde</h3><p>On-chain, sin gas.</p></div>
+          <div class="card v rv d4"><div class="step-n">4</div><h3>Retira</h3><p>A tu banco.</p></div>
         </div>
       </div>
     </section>
@@ -313,10 +328,10 @@
         <span class="kicker rv"><span class="n">5</span>Canales</span>
         <h2 class="title display rv">Cómo llegamos al usuario</h2>
         <div class="grid4">
-          <div class="card rv d1"><div class="ic">📲</div><h3>App directa</h3><p>iOS, Android y web. Alta en minutos.</p></div>
-          <div class="card v rv d2"><div class="ic">🎁</div><h3>Referidos</h3><p>Bono de bienvenida que crece viral.</p></div>
-          <div class="card rv d3"><div class="ic">🌐</div><h3>Comunidad</h3><p>Cripto y fintech mexicana · EthMex.</p></div>
-          <div class="card v rv d4"><div class="ic">🤝</div><h3>Alianzas</h3><p>Fintechs y nóminas como distribución.</p></div>
+          <div class="card rv d1"><div class="ic"><svg viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg></div><h3>App</h3><p>iOS · Android · web.</p></div>
+          <div class="card v rv d2"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg></div><h3>Referidos</h3><p>Bono viral.</p></div>
+          <div class="card rv d3"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div><h3>Comunidad</h3><p>Cripto MX · EthMex.</p></div>
+          <div class="card v rv d4"><div class="ic"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Alianzas</h3><p>Fintechs y nóminas.</p></div>
         </div>
       </div>
     </section>
@@ -328,9 +343,9 @@
         <span class="kicker rv"><span class="n">6</span>Fuentes de ingreso</span>
         <h2 class="title display rv">Cómo gana <span class="em">Reyf</span></h2>
         <div class="grid3">
-          <div class="card rv d1"><div class="ic">📊</div><h3>Spread de rendimiento</h3><p>Diferencial entre el APR de los instrumentos y el 0% que adelanta al usuario. Escrito en el contrato ReyfAdvance.</p></div>
-          <div class="card v rv d2"><div class="ic">🔁</div><h3>Spread de FX</h3><p>Margen en conversiones de divisa vía Bitso.</p></div>
-          <div class="card rv d3"><div class="ic">💳</div><h3>Futuro</h3><p>Interchange de tarjeta multi-divisa y plan premium.</p><p class="tagline">en roadmap</p></div>
+          <div class="card rv d1"><div class="ic"><svg viewBox="0 0 24 24"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg></div><h3>Spread de yield</h3><p>APR real − 0% al usuario.</p></div>
+          <div class="card v rv d2"><div class="ic"><svg viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></div><h3>Spread de FX</h3><p>Margen por conversión.</p></div>
+          <div class="card rv d3"><div class="ic"><svg viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg></div><h3>Futuro</h3><p>Tarjeta + premium.</p><p class="tagline">en roadmap</p></div>
         </div>
       </div>
     </section>
@@ -342,15 +357,15 @@
         <span class="kicker rv"><span class="n">7</span>Estructura de costos</span>
         <h2 class="title display rv">Dónde se va el dinero</h2>
         <div class="grid2">
-          <div class="panel rv d1"><h3>Variables (por uso)</h3>
-            <li><span class="d"></span>Gas patrocinado · paymaster ERC-4337</li>
-            <li><span class="d"></span>Comisiones Juno/Bitso (SPEI, emisión, FX)</li>
-            <li><span class="d"></span>RPC y consumo on-chain</li>
+          <div class="panel rv d1"><h3>Variables · por uso</h3>
+            <li><span class="d"></span>Gas patrocinado (ERC-4337)</li>
+            <li><span class="d"></span>Comisiones Juno / Bitso</li>
+            <li><span class="d"></span>RPC on-chain</li>
           </div>
-          <div class="panel v rv d2"><h3>Fijos (operación)</h3>
-            <li><span class="d"></span>Infraestructura: Privy, Supabase</li>
-            <li><span class="d"></span>Equipo de producto e ingeniería</li>
-            <li><span class="d"></span>Compliance y seguridad</li>
+          <div class="panel v rv d2"><h3>Fijos · operación</h3>
+            <li><span class="d"></span>Infra: Privy, Supabase</li>
+            <li><span class="d"></span>Equipo</li>
+            <li><span class="d"></span>Compliance</li>
           </div>
         </div>
       </div>
@@ -378,10 +393,10 @@
         <span class="kicker rv"><span class="n">9</span>Ventaja injusta</span>
         <h2 class="title display rv">Por qué es real, <span class="em">no humo</span></h2>
         <div class="grid2">
-          <div class="card rv d1"><div class="ic">🫥</div><h3>Cripto invisible</h3><p>ERC-4337: sin firmas ni gas para el usuario.</p></div>
-          <div class="card v rv d2"><div class="ic">🔒</div><h3>Rieles fiat seguros</h3><p>HMAC en servidor · operaciones idempotentes.</p></div>
-          <div class="card rv d3"><div class="ic">📜</div><h3>Contratos propios</h3><p>Con tests anti-reentrancy (Foundry).</p></div>
-          <div class="card v rv d4"><div class="ic">✅</div><h3>No custodial + honesto</h3><p>Saldo real on-chain, sin inventar números.</p></div>
+          <div class="card rv d1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg></div><h3>Cripto invisible</h3><p>Sin firmas ni gas.</p></div>
+          <div class="card v rv d2"><div class="ic"><svg viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>Fiat seguro</h3><p>HMAC · idempotente.</p></div>
+          <div class="card rv d3"><div class="ic"><svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><line x1="8" x2="16" y1="13" y2="13"/><line x1="8" x2="16" y1="17" y2="17"/></svg></div><h3>Contratos propios</h3><p>Con tests (Foundry).</p></div>
+          <div class="card v rv d4"><div class="ic"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>No custodial</h3><p>Saldo real on-chain.</p></div>
         </div>
       </div>
     </section>
